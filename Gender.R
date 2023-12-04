@@ -104,3 +104,4 @@ sd_gender_matrix <- matrix(
   dimnames = list(c("math", "reading", "writing"), c("female", "male"))  
 )
 
+#calculating average score according to gender
