@@ -46,6 +46,8 @@ mean_gender_matrix <- matrix(
   byrow = TRUE,  
   dimnames = list(c("math", "reading", "writing"), c("female", "male"))  
 )
+print(mean_gender_matrix)
+
 
 #common median
 median_math_score <- median(exams$math.score)
@@ -74,6 +76,7 @@ median_gender_matrix <- matrix(
   byrow = TRUE,  
   dimnames = list(c("math", "reading", "writing"), c("female", "male"))  
 )
+print(median_gender_matrix)
 
 #common standard deviation
 sd_math_score <- sd(exams$math.score)
@@ -103,6 +106,7 @@ sd_gender_matrix <- matrix(
   byrow = TRUE,  
   dimnames = list(c("math", "reading", "writing"), c("female", "male"))  
 )
+print(sd_gender_matrix)
 
 #Calculating average score according to gend
 library(tidyverse)
@@ -115,4 +119,6 @@ mean_average_score_male <- mean(exams$average.score[exams$gender == 'male'])
 cat("Mean for average score (female):", mean_average_score_female, 
     " | Mean for average score (male):", mean_average_score_male, "\n")
 
+
+write.csv(exams, "exams_new.csv")
 
