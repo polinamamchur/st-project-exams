@@ -104,4 +104,15 @@ sd_gender_matrix <- matrix(
   dimnames = list(c("math", "reading", "writing"), c("female", "male"))  
 )
 
-#calculating average score according to gender
+#Calculating average score according to gend
+library(tidyverse)
+#adding a column with average score
+exams <- exams %>%
+  mutate(average.score = (math.score + reading.score + writing.score)/3)
+
+mean_average_score_female <- mean(exams$average.score[exams$gender == 'female'])
+mean_average_score_male <- mean(exams$average.score[exams$gender == 'male'])
+cat("Mean for average score (female):", mean_average_score_female, 
+    " | Mean for average score (male):", mean_average_score_male, "\n")
+
+
