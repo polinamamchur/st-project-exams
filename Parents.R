@@ -1,6 +1,6 @@
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 exams<- read.csv("exams_new.csv", header = TRUE, stringsAsFactors = FALSE)
-
+table(exams$gender)
 #What effect do parental education levels have on the academic achievements of students?
 #mean for the average test score depending on parental education level 
 mean_some_high_school <- mean(exams$average.score[exams$parental.level.of.education == 'some high school'])
@@ -49,3 +49,4 @@ sd_edu_data_frame <- data.frame(
 )
 
 print(sd_edu_data_frame)
+

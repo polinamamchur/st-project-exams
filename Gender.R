@@ -1,6 +1,6 @@
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 exams<- read.csv("exams.csv", header = TRUE, stringsAsFactors = FALSE)
-
+table(exams$gender)
 #common mean
 mean_math_score <- mean(exams$math.score)
 mean_reading_score <- mean(exams$reading.score)
